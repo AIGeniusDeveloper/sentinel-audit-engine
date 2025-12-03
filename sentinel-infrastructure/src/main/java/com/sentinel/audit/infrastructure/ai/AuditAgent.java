@@ -1,13 +1,16 @@
 package com.sentinel.audit.infrastructure.ai;
 
-import dev.langchain4j.service.SystemMessage;
-import dev.langchain4j.service.UserMessage;
-import dev.langchain4j.service.spring.AiService;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-@AiService
-public interface AuditAgent {
+@Service
+@RequiredArgsConstructor
+public class AuditAgent {
 
-    @SystemMessage("""
+    private final ChatLanguageModel chatLanguageModel;
+
+    private static final String SYSTEM_PROMPT = """
             You are an expert Compliance Audit Agent.
             Your task is to synthesize information from a Regulatory Search (RAG) and a Business Verification (KYC/Transaction check).
 
@@ -21,6 +24,10 @@ public interface AuditAgent {
             - Generate a clear, traceable Audit Report.
             - Cite the specific regulatory clauses used.
             - Conclude with a FINAL VERDICT: COMPLIANT or NON-COMPLIANT.
-            """)
-    String auditTransaction(@UserMessage String context);
+            """;
+
+    public String auditTransaction(String context) {
+        String fullPrompt = SYSTEM_PROMPT + "\n\nContext:\n" + context;
+        return chatLanguageModel.generate(fullPrompt);
+    }
 }

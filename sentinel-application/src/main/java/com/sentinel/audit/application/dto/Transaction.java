@@ -6,8 +6,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Transaction {
+public class Transaction implements Serializable {
+    private static final long serialVersionUID = 1L;
     @NotBlank(message = "Transaction ID is required")
     private String transactionId;
 
