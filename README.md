@@ -168,12 +168,34 @@ sentinel-audit/
 └── k8s-deployment.yml          # Kubernetes Manifests
 ```
 
+## ✨ Key Features
+
+### AI-Powered Compliance
+- **LangGraph4j Orchestration**: Deterministic state machine for audit workflows
+- **Multi-Agent Architecture**: Specialized agents for KYC, RAG, and synthesis
+- **RAG with pgvector**: Semantic search over regulatory documents
+- **LLM Integration**: Ollama-powered intelligent report generation
+
+### Enterprise Architecture
+- **DDD Multi-Module**: Clean separation (Domain/Application/Infrastructure/API)
+- **Hexagonal Architecture**: Ports & Adapters for flexibility
+- **SOLID Principles**: Interface-based design with dependency inversion
+- **Async Processing**: CompletableFuture-based graph execution
+
+### Production-Ready
+- **Comprehensive Testing**: Unit, Integration, and Web Slice tests
+- **Docker & Kubernetes**: Ready for containerized deployment
+- **Bean Validation**: Input validation on all DTOs
+- **Global Exception Handling**: Structured error responses
+- **Audit Trail**: All transactions logged to database
+
 ## 🔒 Security & Compliance
 
-- **Input Validation**: Bean Validation on all DTOs
-- **Error Handling**: Global exception handler with structured responses
-- **Audit Trail**: All transactions logged to database
-- **Type Safety**: Enums for critical business values
+- **Type Safety**: Enums for critical business values (TransactionType, RegulatoryCategory)
+- **Input Validation**: Jakarta Bean Validation with custom constraints
+- **Error Handling**: Centralized exception handling with detailed error responses
+- **Audit Logging**: Immutable audit trail with timestamps
+- **Data Integrity**: JPA transactions with rollback support
 
 ## 🎓 Learning Outcomes
 
@@ -196,4 +218,18 @@ Contributions welcome! Please read CONTRIBUTING.md first.
 
 ---
 
-**Built with ❤️ for demonstrating senior-level Java development practices**
+## 👨‍💻 Author
+
+**Developed by [AIGeniusDeveloper](https://github.com/AIGeniusDeveloper)**
+
+Senior Java Architect specializing in:
+- 🤖 AI/ML Engineering with LangChain4j & LangGraph
+- 🏗️ Enterprise Architecture (DDD, Hexagonal, Microservices)
+- ☁️ Cloud-Native Solutions (Spring Boot, Kubernetes, Docker)
+- 📊 Financial Technology & Compliance Systems
+
+*This project showcases production-grade patterns for building intelligent, scalable, and maintainable enterprise applications.*
+
+---
+
+**⭐ If you find this project valuable, please consider starring the repository!**
